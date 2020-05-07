@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "77594329-27ef-450b-9439-2d6e3d037372",
+		"name": "add_milk_store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add_product_data_to_db",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1f0dfc6-e166-45bc-8190-c1d7a5581e45",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": {{id}},\n\t\"name\": \"{{name}}\",\n\t\"price\": {{price}},\n\t\"weight\": {{weight}},\n\t\"quantity\": {{quantity}},\n\t\"total_quantity\": {{total_quantity}},\n\t\"total_price\": {{total_price}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/milk",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"milk"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
