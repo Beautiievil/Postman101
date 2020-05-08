@@ -1,0 +1,120 @@
+{
+    "protocol": "http",
+    "port": 3050,
+    "stubs": [
+        {
+            "predicates": [
+                {
+                    "matches": {
+                        "path": "/product"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "GET"
+                    }
+                }
+            ],
+            "responses": [
+                {
+                    "is": {
+                        "statusCode": 200,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "body": [
+                            {
+                                "id": 1,
+                                "name": "นมไทยเดนมาร์คยูเอชที รสจืด",
+                                "price": 12.00,
+                                "weight": 200,
+                                "quantity": 100
+                            },
+                            {
+                                "id": 2,
+                                "name": "นมไทยเดนมาร์คยูเอชที รสหวาน",
+                                "price": 15.00,
+                                "weight": 200,
+                                "quantity": 100
+                            },
+                            {
+                                "id": 3,
+                                "name": "นมยูเอชทีปราศจากน้ําตาลแลคโตส",
+                                "price": 20.00,
+                                "weight": 200,
+                                "quantity": 100
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "predicates": [
+                {
+                    "matches": {
+                        "path": "/selected"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "POST"
+                    }
+                },
+                {
+                    "matches": {
+                        "body": {
+                            "id": 3,
+                            "name": "นมยูเอชทีปราศจากน้ําตาลแลคโตส",
+                            "price": 20.00,
+                            "weight": 200,
+                            "quantity": 5
+                        }
+                    }
+                }
+            ],
+            "responses": [
+                {
+                    "is": {
+                        "statusCode": 200,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "predicates": [
+                {
+                    "matches": {
+                        "path": "/summary"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "GET"
+                    }
+                }
+            ],
+            "responses": [
+                {
+                    "is": {
+                        "statusCode": 200,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "body": {
+                            "id": 3,
+                            "name": "นมยูเอชทีปราศจากน้ําตาลแลคโตส",
+                            "price": 20,
+                            "weight": 200,
+                            "quantity": 5,
+                            "total_price": 100
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

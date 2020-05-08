@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "8739da64-62ef-42bd-ab52-0b68c7da0c21",
+		"name": "mock_mountebank_stub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "579f6577-e15a-41fd-8b16-4f887bdcacac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api_stub",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api_stub"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "select_product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6cf8b92e-2c83-457f-b6aa-877f389989f6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.statusCode(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": {{id}},\n\t\"name\": \"{{name}}\",\n\t\"price\": {{price}},\n\t\"weight\": {{weight}},\n\t\"quantity\": {{quantity}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/selected",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"selected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_product_summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/summary",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"summary"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

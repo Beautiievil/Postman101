@@ -1,0 +1,12 @@
+version: "3.7"
+
+services: 
+  mb-stub-api:
+    image: jkris/mountebank:latest
+    container_name: milk_store_mountebank
+    volumes:
+    - ./imposters/milk_store_stub_api.json:/imposters/milk_store_stub_api.json
+    ports:
+    - 2525:2525
+    - 3050:3050
+    command:  --configfile /imposters/milk_store_stub_api.json --allowInjection

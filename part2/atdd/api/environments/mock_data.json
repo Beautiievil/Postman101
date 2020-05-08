@@ -1,0 +1,14 @@
+{
+	"id": "0a8173cc-7ba8-4e7d-924f-12d354bd5f8d",
+	"name": "mock_data",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://localhost:3050",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-05-08T15:48:21.129Z",
+	"_postman_exported_using": "Postman/7.23.0"
+}
